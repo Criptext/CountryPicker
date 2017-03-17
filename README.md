@@ -8,21 +8,25 @@ chooses a country, you get the name of the selected country and its dial code.
 First, implement `CountryPickerListener` in your activity. The `onSelectCountry` 
 is called once the use chooses a country.
 
-```
+```kotlin
 class MainActivity : AppCompatActivity(), CountryPickerListener {
     var fab : FloatingActionButton? = null
 
-    override fun onSelectCountry(code: String, dial_code: String, name: String) {
-        Snackbar.make(fab!!, "Selected $name ($dial_code)", Snackbar.LENGTH_SHORT).show()
+    override fun onSelectCountry(code: String, dial_code: String, name: String) 
+    {
+        val message = "Selected $name ($dial_code)"
+        Snackbar.make(fab!!, message, Snackbar.LENGTH_SHORT)
+            .show()
     }
 
 //..
 }
 ```
 
-Then, create a new instance of `CountryPicker` and show it via `SupportFragmentManager`.
+Then, create a new instance of `CountryPicker` and show it via 
+`SupportFragmentManager`.
 
-```
+```kotlin
     override fun onCreate(savedInstanceState: Bundle?) {
         //...
 
@@ -33,11 +37,3 @@ Then, create a new instance of `CountryPicker` and show it via `SupportFragmentM
              })
     }
 ```
-
-
-
-
-
-
-
-
