@@ -3,6 +3,15 @@
 Android Library to display a fragment dialog to choose a country. When the user
 chooses a country, you get the name of the selected country and its dial code.
 
+## Install
+
+Grab it from [Jitpack](https://jitpack.io/#Criptext/CountryPicker). If you are 
+already familiar with Jitpack just add this line to your `build.gradle`:
+
+```gradle
+compile 'com.github.Criptext:CountryPicker:1.0'
+```
+
 ## Usage
 
 First, implement `CountryPickerListener` in your activity. The `onSelectCountry` 
@@ -27,8 +36,7 @@ Then, create a new instance of `CountryPicker` and show it via
 `SupportFragmentManager`.
 
 ```kotlin
-    override fun onCreate(savedInstanceState: Bundle?) {
-        //...
+    override fun onCreate(savedInstanceState: Bundle?) { //...
 
         fab = findViewById(R.id.fab) as FloatingActionButton
         fab!!.setOnClickListener({ view ->
